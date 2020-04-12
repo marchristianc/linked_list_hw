@@ -98,9 +98,11 @@ void dlist_print(dlist* list, const char* msg){
     dnode* t_node;
     t_node = malloc(sizeof(dnode));
     t_node = list->head;
+    int ctr = 0;
     while(t_node != NULL){
-        printf("%d --> %p\n", t_node->data, &(t_node->data));
+        printf("%p <-- %d (%p) --> %p\n", &((t_node->prev)->data), t_node->data, &(t_node->data), &((t_node->next)->data));
         t_node = t_node->next;
+        ctr++;
     }
 }
 
